@@ -74,6 +74,10 @@ The analysis reveals a critical operational threshold regarding campaign design:
 * **The Outcome:** Keeps the identical 172 customer volume saved and gross revenue protected, but slashes 12-month campaign overhead down to **USD 20,424.00**. 
 * **The Financial Win:** Net benefit explodes to **USD 137,130.75**, yielding an exceptional **671.4% ROI** and cleanly proving the business value of the data science framework.
 
+
+### Strategy 3: Medium Cost Discount Campaign ($7/month credit)
+* **The Math:** Offering a USD 7.00/month price cut to all targeted accounts across a 12-month contract lifespan.
+* **The Outcome:** Successfully saves 172 true churners and protects **USD 86,070.75** in gross lifetime revenue, resulting in a large **120.4% ROI**.
 ---
 
 ## 🚀 How to Run the Project
