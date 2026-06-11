@@ -33,8 +33,8 @@ Real-world behavioral datasets often contain structural quirks. This pipeline im
 
 * **New Customer Constraint:** Programmatically verifies that new accounts (`tenure == 0`) accurately carry zero or null balances in `TotalCharges`.
 * **The Lifetime Bill Ceiling:** Implements a strict business logic check to catch database corruption:
-  $$\text{TotalCharges} \leq (\text{tenure} \times \text{MonthlyCharges} \times 1.5)$$
-  *Note: Low-tenure records (tenure $\leq$ 5 months) are safely bypassed from the ceiling check to accommodate baseline upfront hardware activation fees or early account plan modifications.*
+  $$\text{TotalCharges} \ \leq \ (\text{tenure} \times \text{MonthlyCharges} \times 1.5)$$  
+  *Note: Low-tenure records (tenure $`\leq`$ 5 months)are safely bypassed from the ceiling check to accommodate baseline upfront hardware activation fees or early account plan modifications.*
 
 ---
 
