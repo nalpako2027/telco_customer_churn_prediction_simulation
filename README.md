@@ -81,7 +81,7 @@ The analysis reveals a critical operational threshold regarding campaign design:
 
 ---
 ### Methodological Limitation:   
-The models establish predictive correlations between billing metrics and customer behavior. The analysis identifies strong statistical associations and predictive patterns within the data, but causality cannot be claimed. Therefore, all intervention simulations are based on directional business assumptions rather than experimental causal impact data.
+The models establish predictive correlations between billing metrics and customer behavior. The analysis identifies strong statistical associations and predictive patterns within the data, but causality cannot be claimed due to research design for the data collection/reporting. Therefore, all intervention simulations are based on directional business assumptions rather than experimental causal impact data.
 
 ---
 ## 🚀 How to Run the Project
