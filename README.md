@@ -86,11 +86,9 @@ The models establish predictive correlations between billing metrics and custome
 ---
 ## 🚀 How to Run the Project
 1. Clone this repository to your machine.
-2. Ensure you have the required libraries installed:
-   ```bash
-   pip install pandas numpy matplotlib seaborn scikit-learn
-   ```
-3. Open your terminal, boot up your interface, and run all notebook chunks sequentially:
+2. Ensure you have the required libraries installed (bash: Instantly replicate the environment):
+   pip install -r requirements.txt
+3. Open your terminal, boot up your interface, and run notebook chunks sequentially:
    ```bash
    jupyter notebook
    ```
