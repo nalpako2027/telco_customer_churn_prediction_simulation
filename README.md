@@ -80,8 +80,8 @@ The analysis reveals a critical operational threshold regarding campaign design:
 * **The Outcome:** Successfully saves 172 true churners and protects **USD 86,070.75** in gross lifetime revenue, resulting in a large **120.4% ROI**.
 
 ---
-### Methodological Note:   
-This model establishes predictive correlations between billing metrics and customer behavior rather than direct causation. All intervention simulations are based on directional business assumptions rather than experimental causal impact data.
+### Methodological Limitation:   
+The models establish predictive correlations between billing metrics and customer behavior rather than direct causation. The analysis identifies strong statistical associations and predictive patterns within the data, but it does not produce causal estimates. True causal inference regarding the effectiveness of retention offers would require a randomized A/B field experiment with an isolated control group. Therefore, all intervention simulations are based on directional business assumptions rather than experimental causal impact data.
 
 ---
 ## 🚀 How to Run the Project
