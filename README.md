@@ -78,8 +78,12 @@ The analysis reveals a critical operational threshold regarding campaign design:
 ### Strategy 3: Medium Cost Discount Campaign ($7/month credit)
 * **The Math:** Offering a USD 7.00/month price cut to all targeted accounts across a 12-month contract lifespan.
 * **The Outcome:** Successfully saves 172 true churners and protects **USD 86,070.75** in gross lifetime revenue, resulting in a large **120.4% ROI**.
----
 
+---
+### Methodological Note:   
+This model establishes predictive correlations between billing metrics and customer behavior rather than direct causation. All intervention simulations are based on directional business assumptions rather than experimental causal impact data.
+
+---
 ## 🚀 How to Run the Project
 1. Clone this repository to your machine.
 2. Ensure you have the required libraries installed:
