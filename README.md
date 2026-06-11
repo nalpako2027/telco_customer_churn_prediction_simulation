@@ -67,7 +67,7 @@ The analysis reveals a critical operational threshold regarding campaign design:
 
 ### Strategy 1: Direct Cash Discount Campaign ($15/month credit)
 * **The Math:** Offering a USD 15.00/month price cut to all 851 targeted accounts across a 12-month contract lifespan.
-* **The Outcome:** Successfully saves 172 true churners and protects **USD 157,554.75** in gross lifetime revenue. However, the overhead cost of the 420 false alarms compresses the campaign's net profit to **USD 4,374.75**, resulting in a marginal **2.9% ROI**.
+* **The Outcome:** Successfully saves 172 true churners and protects **USD 157,554.75** in gross 12-month revenue. However, the overhead cost of the 420 false alarms compresses the campaign's net profit to **USD 4,374.75**, resulting in a marginal **2.9% ROI**.
 
 ### Strategy 2: Low-Marginal-Cost Incentive Campaign ($2/month internal cost)
 * **The Math:** Pivoting the campaign to low-cost, high-perceived-value perks (e.g., automated router hardware upgrades or free premium streaming data bundles).
@@ -77,7 +77,7 @@ The analysis reveals a critical operational threshold regarding campaign design:
 
 ### Strategy 3: Medium Cost Discount Campaign ($7/month credit)
 * **The Math:** Offering a USD 7.00/month price cut to all targeted accounts across a 12-month contract lifespan.
-* **The Outcome:** Successfully saves 172 true churners and protects **USD 86,070.75** in gross lifetime revenue, resulting in a large **120.4% ROI**.
+* **The Outcome:** Successfully saves 172 true churners and protects **USD 86,070.75** in gross 12 month revenue, resulting in a large **120.4% ROI**.
 
 ---
 ### Methodological Limitation:   
