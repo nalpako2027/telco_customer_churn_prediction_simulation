@@ -1,0 +1,20 @@
+# Telco Customer Churn Pipeline Configuration Profile
+
+data_pipeline:
+  raw_dataset_name: "WA_Fn-UseC_-Telco-Customer-Churn.csv"
+  processed_output_name: "telco_cleaned_validated.csv"
+  target_column: "Churn"
+  split_test_size: 0.20
+  random_state: 42
+
+modeling_parameters:
+  knn_neighbors: 29
+  knn_weights: "distance"
+  logistic_max_iter: 10000
+  logistic_c_regularization: 0.1
+  class_weight: "balanced"
+
+financial_simulation:
+  retention_offer_cost: 2.00
+  intervention_success_rate: 0.40
+  customer_lifespan_months: 12
