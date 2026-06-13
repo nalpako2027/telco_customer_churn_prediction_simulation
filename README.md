@@ -96,6 +96,6 @@ The models establish predictive correlations between billing metrics and custome
 ## Attribution   
 If you use this project in research, publications, presentations, or other work, please cite or acknowledge:
 
-Orhan Kaplan
-Telco Customer Churn Analysis & Predictive Modeling Pipeline
+Orhan Kaplan  
+Telco Customer Churn Analysis & Predictive Modeling Pipeline  
 GitHub URL: https://github.com/nalpako2027/telco_customer_churn_prediction_simulation.git
