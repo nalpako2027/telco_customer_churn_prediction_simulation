@@ -93,7 +93,8 @@ The models establish predictive correlations between billing metrics and custome
    jupyter notebook
    ```
 
-NOTE: If you use this project in research, publications, presentations, or other work, please cite or acknowledge:
+## Attribution   
+If you use this project in research, publications, presentations, or other work, please cite or acknowledge:
 
 Orhan Kaplan
 Telco Customer Churn Analysis & Predictive Modeling Pipeline
