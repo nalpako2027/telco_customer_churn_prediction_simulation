@@ -93,6 +93,9 @@ The models establish predictive correlations between billing metrics and custome
    jupyter notebook
    ```
 
+Note: Raw data sourced from IBM under the Apache 2.0 License and modified for type alignment, validation checks, and train/test splits.
+Data Source: https://github.com/IBM/telco-customer-churn-on-icp4d/tree/master/data 
+
 ## Attribution   
 If you use this project in research, publications, presentations, or other work, please cite or acknowledge:
 
