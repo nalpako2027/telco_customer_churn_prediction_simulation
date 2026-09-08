@@ -1,6 +1,6 @@
 ![License](https://img.shields.io/github/license/nalpako2027/telco_customer_churn_prediction_simulation?style=for-the-badge)
 ![Last Commit](https://img.shields.io/github/last-commit/nalpako2027/telco_customer_churn_prediction_simulation?style=for-the-badge)
-![Python](https://img.shields.io/badge/python-3.11-blue)
+![Python](https://img.shields.io/badge/python-%233670A0.svg?style=for-the-badge&logo=python&logoColor=ffdd54)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/orhan-kaplan-phd-5a4a84212/)
 
 # Telco Customer Churn Analysis & Predictive Modeling Pipeline
