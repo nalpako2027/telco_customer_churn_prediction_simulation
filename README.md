@@ -4,7 +4,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/orhan-kaplan-phd-5a4a84212/)
 
 # Telco Customer Churn Analysis & Predictive Modeling Pipeline
-## [Note: This project is being reviewed and it will be updated with applying XGBoost for selecting the relevant features.]
+## 🚧⏳🔄🔜 [Note: This project is being reviewed and it will be updated with applying XGBoost for selecting the relevant features.]
 
 This repository contains an end-to-end data science and business analytics pipeline designed to identify high-risk customer churn segments and evaluate the financial impact of proactive marketing interventions using the **IBM Telco Customer Churn dataset**. Features include custom logic assertions, optimization of decision thresholds, multi-model ROC evaluation, and simulation of the financial ROI of customer retention strategies.
 
