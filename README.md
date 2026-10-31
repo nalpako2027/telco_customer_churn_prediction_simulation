@@ -85,6 +85,8 @@ Critical + High cover 464 customers (22.0% of the test base) and 56.6% of expect
 
 Break-even sits at roughly USD 10.63/month at a 20% save rate. The break-even save rate rises with offer size, from about 4% at USD 2 to about 28% at USD 15. At USD 7, ROI ranges from +12.7% (15% save rate) to +277.2% (50%). These are upper-bound scenarios (see Section 10).
 
+<p align="center"><img src="images/roi_vs_offer_cost.png" alt="Retention campaign ROI vs. monthly offer cost" width="700"></p>
+
 **Q6. [UPDATE]** Do the `tenure × Contract_Two year` and `tenure × InternetService_Fiber optic` interactions improve Logistic Regression? Flagged as plausible in Notebook 1; result to be added.
 
 ## ⚙️ 7. Requirements
