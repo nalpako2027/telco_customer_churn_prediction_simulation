@@ -218,3 +218,5 @@ __marimo__/
 .streamlit/secrets.toml
 *.csv
 *.rtf
+.DS_Store
+images/.DS_Store
