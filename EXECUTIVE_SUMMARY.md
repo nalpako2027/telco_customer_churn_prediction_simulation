@@ -1,4 +1,4 @@
-# Executive Summary: Telco Customer Churn Prediction & Retention Strategy
+# Executive Summary: Customer Churn Prediction and Retention Strategy Analysis with Business Impact Simulation
 
 **Author:** Orhan Kaplan · **Data:** IBM Telco Customer Churn dataset (7,043 customers) · **Full technical detail:** see the [README](README.md)
 
