@@ -54,9 +54,13 @@ This repository contains an end-to-end data science and business analytics pipel
 
 **Strongest predictors:** XGBoost gain ranks `Contract_Two year` (21.2%), `InternetService_Fiber optic` (20.8%), `Contract_One year` (12.4%), `InternetService_No` (6.1%) and `PaymentMethod_Electronic check` (4.9%) at the top; the top 5 carry 65.3% of total gain. In Logistic Regression (odds ratios, holding other features fixed): two-year vs. month-to-month contract 0.20 (95% CI 0.13–0.30), one-year 0.54 (0.42–0.69), fiber optic vs. DSL 3.3 (2.2–4.9), no internet service vs. DSL 0.27 (0.18–0.41). The highest-risk profile is a month-to-month, fiber-optic customer paying by electronic check.
 
+<p align="center"><img src="images/roi_vs_offer_cost.png" alt="Retention campaign ROI vs. monthly offer cost" width="700"></p>
+
 ## 🧩 6. Business Questions & Key Insights
 
 **Q1. How do customer attributes relate to churn?** Month-to-month customers churn at ~43% vs. ~3% for two-year contracts; fiber optic ~42% vs. DSL ~19%; electronic check ~45% vs. ~15–17% for automatic payment. Churners average 18.0 months of tenure vs. 37.6 for retained customers and pay USD 74.44/month vs. 61.27. `gender` shows no separation.
+
+<p align="center"><img src="images/churn_rate_by_category.png" alt="Churn rate by customer attribute" width="800"></p>
 
 **Q2. Which features carry the strongest signal?** Contract type, internet service type, payment method and tenure (see Section 5). `tenure`, `MonthlyCharges` and `TotalCharges` are strongly overlapping (`TotalCharges` ≈ `tenure` × `MonthlyCharges`; VIF up to 21.7), so their coefficients are not interpreted individually.
 
