@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/python-%233670A0.svg?style=for-the-badge&logo=python&logoColor=ffdd54)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/orhan-kaplan-phd-5a4a84212/)
 
-# ✨ Telco Customer Churn Analysis, Feature Selection & Predictive Modeling Pipeline with Retention ROI Simulation
+# ✨ Customer Churn Prediction and Retention Strategy Analysis with Business Impact Simulation
 
 ## 📝 1. Summary
 This repository contains an end-to-end data science and business analytics pipeline on the **IBM Telco Customer Churn dataset**: exploratory analysis, XGBoost-based feature selection, Logistic Regression vs. k-Nearest Neighbors (KNN) modeling, customer risk tranches, and a financial ROI simulation of retention offers. It exists to identify high-risk churn segments and to estimate, under explicit assumptions, what proactive retention could be worth.
@@ -11,7 +11,7 @@ This repository contains an end-to-end data science and business analytics pipel
 ## 🎯 2. Objectives
 **Business case.** Customer attrition is a major revenue leak in telecommunications: 1,869 of 7,043 customers (26.5%) churned, roughly USD 139K in monthly recurring revenue at an average churner bill of about USD 74. This project shifts the strategy from reactive customer care to proactive, targeted retention.
 
-**Technical goals.**
+**Technical goals**
 1. Describe the relationship between customer attributes (tenure, contract, services, billing) and churn.
 2. Rank all predictors by XGBoost gain importance and select a compact feature set.
 3. Predict churn from the selected features and compare Logistic Regression with KNN under class imbalance.
