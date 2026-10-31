@@ -140,7 +140,8 @@ Break-even sits at roughly USD 10.63/month at a 20% save rate. The break-even sa
 - Yang, J., Eckles, D., Dhillon, P., & Aral, S. (2022). Targeting for long-term outcomes (arXiv:2010.15835v2). https://arxiv.org/abs/2010.15835
 
 ## 12. License
-See the `LICENSE` file in this repository [UPDATE: state the license type]. The raw data comes from IBM under the Apache 2.0 License and was modified for type alignment, validation checks and train/test splits.
+![License](https://img.shields.io/github/license/nalpako2027/telco_customer_churn_prediction_simulation?style=for-the-badge)
+
 
 ## 👤 13. Author / Attribution
 **Orhan Kaplan** · [LinkedIn](https://www.linkedin.com/in/orhan-kaplan-phd-5a4a84212/) · [UPDATE: portfolio link]
