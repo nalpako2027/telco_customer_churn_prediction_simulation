@@ -9,7 +9,7 @@
 This repository contains an end-to-end data science and business analytics pipeline on the **IBM Telco Customer Churn dataset**: exploratory analysis, XGBoost-based feature selection, Logistic Regression vs. k-Nearest Neighbors (KNN) modeling, customer risk tranches, and a financial ROI simulation of retention offers. It exists to identify high-risk churn segments and to estimate, under explicit assumptions, what proactive retention could be worth.
 
 ## 🎯 2. Objectives
-**Business case.** Customer attrition is a major revenue leak in telecommunications: 1,869 of 7,043 customers (26.5%) churned, roughly USD 139K in monthly recurring revenue at an average churner bill of about \\$74. This project shifts the strategy from reactive customer care to proactive, targeted retention.
+**Business case.** Customer attrition is a major revenue leak in telecommunications: 1,869 of 7,043 customers (26.5%) churned, roughly USD 139K in monthly recurring revenue at an average churner bill of about \$74. This project shifts the strategy from reactive customer care to proactive, targeted retention.
 
 **Technical goals**
 1. Describe the relationship between customer attributes (tenure, contract, services, billing) and churn.
@@ -34,7 +34,7 @@ This repository contains an end-to-end data science and business analytics pipel
 1. **Models:** MinMax-scaled features; KNN (`k=41`, distance-weighted; chosen by 5-fold stratified CV on PR-AUC) and Logistic Regression (`C=10`, tuned by CV, no class weights).
 2. **Imbalance handling:** through the decision threshold rather than re-weighting: thresholds maximize F1 on out-of-fold training predictions (KNN 0.33, LR 0.31), so predicted probabilities stay calibrated for the ROI simulation.
 3. **Diagnostics:** VIF, spline likelihood-ratio tests for logit linearity, calibration (Brier score, slope), ROC and PR curves, paired bootstrap and McNemar tests.
-4. **Risk tranches & ROI:** probability cut-offs at 0.25 / 0.50 / 0.75; Critical + High tranches targeted; offers of \\$2–\\$15 per month over 12 months; hypothetical 20% successful intervention (saved) rate with a 15–50% sensitivity grid.
+4. **Risk tranches & ROI:** probability cut-offs at 0.25 / 0.50 / 0.75; Critical + High tranches targeted; offers of \$2–\$15 per month over 12 months; hypothetical 20% successful intervention (saved) rate with a 15–50% sensitivity grid.
 
 ## 📊 5. Key Findings & Model Performance
 
@@ -58,7 +58,7 @@ This repository contains an end-to-end data science and business analytics pipel
 
 ## 🧩 6. Business Questions & Key Insights
 
-**Q1. How do customer attributes relate to churn?** Month-to-month customers churn at ~43% vs. ~3% for two-year contracts; fiber optic ~42% vs. DSL ~19%; electronic check ~45% vs. ~15–17% for automatic payment. Churners average 18.0 months of tenure vs. 37.6 for retained customers and pay \\$74.44/month vs. 61.27. `gender` shows no separation.
+**Q1. How do customer attributes relate to churn?** Month-to-month customers churn at ~43% vs. ~3% for two-year contracts; fiber optic ~42% vs. DSL ~19%; electronic check ~45% vs. ~15–17% for automatic payment. Churners average 18.0 months of tenure vs. 37.6 for retained customers and pay \$74.44/month vs. 61.27. `gender` shows no separation.
 
 <p align="center"><img src="images/churn_rate_by_category.png" alt="Churn rate by customer attribute" width="800"></p>
 
@@ -77,7 +77,7 @@ This repository contains an end-to-end data science and business analytics pipel
 
 Critical + High risk tranche cover 464 customers (22.0% of the test base) and 56.6% of expected monthly revenue at risk (USD 23,220.95 of USD 41,016.44), and reach 54.9% of all test-set churners.
 
-**Q5. What is the financial impact?** With 464 targeted customers and a 20% save rate or successful intervention rate (62 churners saved), gross revenue protected over 12 months is \\$59,186.41. ROI depends strongly on offer cost:
+**Q5. What is the financial impact?** With 464 targeted customers and a 20% save rate or successful intervention rate (62 churners saved), gross revenue protected over 12 months is \$59,186.41. ROI depends strongly on offer cost:
 
 | Offer (USD/month) | Campaign cost | Net benefit | ROI |
 | :---: | :---: | :---: | :---: |
@@ -87,7 +87,7 @@ Critical + High risk tranche cover 464 customers (22.0% of the test base) and 56
 | 10 | USD 55,680 | USD 3,506 | 6.3% |
 | 15 | USD 83,520 | USD −24,334 | −29.1% |
 
-Break-even sits at roughly \\$10.63/month at a 20% save rate. The break-even save rate rises with offer size, from about 4% at \\$2 to about 28% at \\$15. At |\\$7, ROI ranges from +12.7% (15% save rate) to +277.2% (50%). These are upper-bound scenarios (see limitations Section).
+Break-even sits at roughly \$10.63/month at a 20% save rate. The break-even save rate rises with offer size, from about 4% at \\$2 to about 28% at \\$15. At |\\$7, ROI ranges from +12.7% (15% save rate) to +277.2% (50%). These are upper-bound scenarios (see limitations Section).
 
 <p align="center"><img src="images/roi_vs_offer_cost.png" alt="Retention campaign ROI vs. monthly offer cost" width="700"></p>
 
