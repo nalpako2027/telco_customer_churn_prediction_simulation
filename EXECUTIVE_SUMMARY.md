@@ -5,7 +5,7 @@
 ---
 
 ## The Business Problem
-Customer churn is a direct revenue leak. In this dataset, **26.5% of customers (1,869 of 7,043) left**, representing roughly **\\$139K in lost monthly recurring revenue**. Retention budgets are limited, so the question is not only *who* will leave, but *who is worth contacting, and how much can we afford to spend on them?*
+Customer churn is a direct revenue leak. In this dataset, **26.5% of customers (1,869 of 7,043) left**, representing roughly **\$139K in lost monthly recurring revenue**. Retention budgets are limited, so the question is not only *who* will leave, but *who is worth contacting, and how much can we afford to spend on them?*
 
 ## What Was Done
 1. **Diagnosed** which customer attributes are associated with churn.
