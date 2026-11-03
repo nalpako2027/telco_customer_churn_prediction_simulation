@@ -9,7 +9,7 @@ Customer churn is a direct revenue leak. In this dataset, **26.5% of customers (
 
 ## What Was Done
 1. **Diagnosed** which customer attributes are associated with churn.
-2. **Selected** the most informative of 23 encoded features (XGBoost ranking) to keep the final model simple and explainable.
+2. **Selected** the most informative of 23 encoded features after one-hot encoding (XGBoost ranking) to keep the final model simple and explainable.
 3. **Built and compared** two prediction models (Logistic Regression and k-Nearest Neighbors) on customers the models had never seen.
 4. **Grouped customers** into four risk tiers (Critical, High, Medium, Low) based on predicted churn probability.
 5. **Simulated the 12-month financial return (ROI)** of retention offers (hypothetical interventions) at different price points and success rates.
