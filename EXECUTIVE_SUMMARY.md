@@ -12,7 +12,7 @@ Customer churn is a direct revenue leak. In this dataset, **26.5% of customers (
 2. **Selected** the most informative of 23 candidate variables (XGBoost ranking) to keep the final model simple and explainable.
 3. **Built and compared** two prediction models (Logistic Regression and k-Nearest Neighbors) on customers the models had never seen.
 4. **Grouped customers** into four risk tiers (Critical, High, Medium, Low) based on predicted churn probability.
-5. **Simulated the 12-month financial return** of retention offers at different price points and success rates.
+5. **Simulated the 12-month financial return (ROI)** of retention offers (hypothetical interventions) at different price points and success rates.
 
 ## Key Findings
 
@@ -47,12 +47,12 @@ The break-even offer is about **USD 10.63 per month**. Low-cost perks (e.g., ser
 
 ## Recommendations
 1. **Prioritize the Critical and High tiers** for outreach and leave the Low tier untouched to protect margin.
-2. **Favor low-cost, non-price incentives** (roughly USD 7 per month or less in effective cost) over deep discounts.
+2. **Favor low-cost, non-price incentives** (roughly \$7 per month or less in effective cost) over deep discounts.
 3. **Pilot before scaling:** run a controlled A/B test (offer vs. no-offer group, several offer levels) to measure the real save rate before committing a full budget.
 4. **Review the conditions behind the risk profile** (month-to-month contracts, fiber-optic service quality, manual payment methods) as areas to investigate, not as proven causes (see below).
 
 ## Important Caveats
-- **Associations, not causes.** The data show which customers are likely to leave, not what would make them stay. The dataset contains no record of past retention offers.
+- **Associations, not causation.** The data show which customers are likely to leave, not what would make them stay. The dataset contains no record of past retention offers.
 - **The 20% save rate is an assumption**, not a measured result, and it is applied equally to every offer level. All ROI figures are therefore **upper-bound scenarios** that count revenue (not margin) and assume saved customers stay the full 12 months.
 - **Targeting by risk is not targeting by responsiveness.** The highest-risk customers are not necessarily the most persuadable, and some offers can backfire.
 - Financial figures refer to the **2,113-customer test sample**, not the full customer base, and should be scaled accordingly.
