@@ -93,9 +93,21 @@ Break-even sits at roughly \\$10.63/month at a 20% save rate. The break-even sav
 
 
 ## ⚙️ 7. Requirements
-- Python 3.11
-- pandas, numpy, matplotlib, seaborn, scipy, scikit-learn, xgboost, shap, statsmodels, prettytable [UPDATE: version numbers]
-- Jupyter Notebook
+Tested with **Python 3.13.9**. Exact version ranges are in [`requirements.txt`](requirements.txt).
+
+| Package | Tested version |
+| :--- | :---: |
+| numpy | 2.3.5 |
+| pandas | 2.3.3 |
+| scipy | 1.16.3 |
+| scikit-learn | 1.7.2 |
+| xgboost | 3.4.1 |
+| statsmodels | 0.14.5 |
+| matplotlib | 3.10.6 |
+| seaborn | 0.13.2 |
+| prettytable | 3.17.0 |
+
+Jupyter Notebook is needed to run the `.ipynb` files.
 
 ## ▶️ 8. How to Reproduce
 1. Clone the repository and install the dependencies:
