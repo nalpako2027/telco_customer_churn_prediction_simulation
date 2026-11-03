@@ -9,32 +9,32 @@
 This repository contains an end-to-end data science and business analytics pipeline on the **IBM Telco Customer Churn dataset**: exploratory analysis, XGBoost-based feature selection, Logistic Regression vs. k-Nearest Neighbors (KNN) modeling, customer risk tranches, and a financial ROI simulation of retention offers. It exists to identify high-risk churn segments and to estimate, under explicit assumptions, what proactive retention could be worth.
 
 ## 🎯 2. Objectives
-**Business case.** Customer attrition is a major revenue leak in telecommunications: 1,869 of 7,043 customers (26.5%) churned, roughly USD 139K in monthly recurring revenue at an average churner bill of about USD 74. This project shifts the strategy from reactive customer care to proactive, targeted retention.
+**Business case.** Customer attrition is a major revenue leak in telecommunications: 1,869 of 7,043 customers (26.5%) churned, roughly USD 139K in monthly recurring revenue at an average churner bill of about \\$74. This project shifts the strategy from reactive customer care to proactive, targeted retention.
 
 **Technical goals**
 1. Describe the relationship between customer attributes (tenure, contract, services, billing) and churn.
 2. Rank all predictors by XGBoost gain importance and select a compact feature set.
 3. Predict churn from the selected features and compare Logistic Regression with KNN under class imbalance.
 4. Convert predicted probabilities into prioritized risk tranches (Critical / High / Medium / Low).
-5. Simulate the 12-month financial impact (cost vs. protected revenue) of targeting the high-risk tranches.
+5. Simulate the 12-month financial impact (cost vs. protected revenue) of targeting the high-risk tranches through potential interventions.
 
 ## 📂 3. Dataset
 - **Source:** IBM Telco Customer Churn dataset (`Telco-Customer-Churn.csv`), https://github.com/IBM/telco-customer-churn-on-icp4d/tree/master/data (Apache 2.0 License).
 - **Size:** 7,043 customers × 21 columns (20 after dropping `customerID`); 5,174 stayed (73.5%), 1,869 churned (26.5%).
-- **Preparation before modeling:** `customerID` dropped; `TotalCharges` converted to numeric; 11 structurally missing `TotalCharges` values (all `tenure = 0`, all non-churners) filled with 0; redundant levels ("No internet service", "No phone service") collapsed into "No". No rows were removed. A stratified 70/30 split (`random_state=60`) gives 4,930 training and 2,113 test rows.
+- **Preparation before modeling:** `customerID` dropped; `TotalCharges` converted to numeric; 11 structurally missing `TotalCharges` values (all `tenure = 0`, all non-churners) filled with 0; redundant levels ("No internet service", "No phone service") collapsed into "No". No rows were removed. A stratified 70/30 split gives 4,930 training and 2,113 test rows.
 
 ## 🔧 4. Methodology
 **Notebook 1: `01_eda_and_feature_selection.ipynb`**
-1. **Cleaning & QA:** type conversion, programmatic `assert` checks (no negative charges or tenure; customers with `tenure == 0` carry zero `TotalCharges`; redundant-level checks), and an IQR outlier check (no outliers found, none removed).
+1. **Cleaning & QA:** data type conversion, data quality `assert` checks (no negative charges or tenure; customers with `tenure == 0` carry zero `TotalCharges`; redundant-level checks), and an IQR outlier check (no outliers found, none removed).
 2. **EDA:** churn rate by category, churned vs. retained means, Pearson correlations (numeric), Cramér's V (categorical).
 3. **Encoding & split:** one-hot encoding (23 predictors), stratified 70/30 split.
-4. **Feature selection:** XGBoost used only as a ranking tool (`max_depth=4`, `learning_rate=0.05`, early stopping on a validation split of the training set). Top 12 features by gain (84.8% cumulative gain) plus `MonthlyCharges` (force-included as the business-critical revenue variable) = **13 features**. A 5-seed robustness check kept 11–12 of the top 12, and a SHAP interaction screen found only modest interactions, so no interaction terms were added.
+4. **Feature selection:** XGBoost used only as a ranking tool (`max_depth=4`, `learning_rate=0.05`, early stopping on a validation split of the training set) for feature selection. Top 12 features by gain (84.8% cumulative gain) plus `MonthlyCharges` (force-included as the business-critical revenue variable) = **13 features**. A 5-seed robustness check kept 11–12 of the top 12, and a SHAP interaction screen found only modest interactions, so no interaction terms were added.
 
 **Notebook 2: `02_modeling_and_business_impact.ipynb`**
 1. **Models:** MinMax-scaled features; KNN (`k=41`, distance-weighted; chosen by 5-fold stratified CV on PR-AUC) and Logistic Regression (`C=10`, tuned by CV, no class weights).
-2. **Imbalance handling:** through the decision threshold rather than reweighting: thresholds maximize F1 on out-of-fold training predictions (KNN 0.33, LR 0.31), so predicted probabilities stay calibrated for the ROI simulation.
+2. **Imbalance handling:** through the decision threshold rather than re-weighting: thresholds maximize F1 on out-of-fold training predictions (KNN 0.33, LR 0.31), so predicted probabilities stay calibrated for the ROI simulation.
 3. **Diagnostics:** VIF, spline likelihood-ratio tests for logit linearity, calibration (Brier score, slope), ROC and PR curves, paired bootstrap and McNemar tests.
-4. **Risk tranches & ROI:** probability cut-offs at 0.25 / 0.50 / 0.75; Critical + High tranches targeted; offers of USD 2–15 per month over 12 months; 20% base save rate with a 15–50% sensitivity grid.
+4. **Risk tranches & ROI:** probability cut-offs at 0.25 / 0.50 / 0.75; Critical + High tranches targeted; offers of \\$2–\\$15 per month over 12 months; hypothetical 20% successful intervention (saved) rate with a 15–50% sensitivity grid.
 
 ## 📊 5. Key Findings & Model Performance
 
@@ -50,7 +50,7 @@ This repository contains an end-to-end data science and business analytics pipel
 | ROC-AUC | 0.815 | **0.852** |
 | PR-AUC | 0.601 | **0.657** |
 
-**In practice:** Logistic Regression is the better model to deploy. It flags 77.2% of actual churners, and its ROC-AUC and PR-AUC advantages are statistically supported (paired bootstrap: ROC-AUC +0.037, 95% CI +0.024 to +0.051; PR-AUC +0.056, 95% CI +0.018 to +0.093). The gap at the classification level is small (McNemar p = 0.20). Accuracy is a weak yardstick here, since "everyone stays" already scores 73.5%. Probabilities are well calibrated (Brier score 0.1331, calibration slope 1.07), which makes them usable for the financial simulation.
+**In practice:** Logistic Regression is the better model to deploy. It flags 77.2% of actual churners, and its ROC-AUC and PR-AUC advantages are statistically supported (paired bootstrap: ROC-AUC +0.037, 95% CI +0.024 to +0.051; PR-AUC +0.056, 95% CI +0.018 to +0.093). The gap at the classification level is small (McNemar p = 0.20). Accuracy is a weak criteria here, since "everyone stays" already scores 73.5%. Probabilities are well calibrated (Brier score 0.1331, calibration slope 1.07), which makes them usable for the financial simulation.
 
 **Strongest predictors:** XGBoost gain ranks `Contract_Two year` (21.2%), `InternetService_Fiber optic` (20.8%), `Contract_One year` (12.4%), `InternetService_No` (6.1%) and `PaymentMethod_Electronic check` (4.9%) at the top; the top 5 carry 65.3% of total gain. In Logistic Regression (odds ratios, holding other features fixed): two-year vs. month-to-month contract 0.20 (95% CI 0.13–0.30), one-year 0.54 (0.42–0.69), fiber optic vs. DSL 3.3 (2.2–4.9), no internet service vs. DSL 0.27 (0.18–0.41). The highest-risk profile is a month-to-month, fiber-optic customer paying by electronic check.
 
@@ -58,7 +58,7 @@ This repository contains an end-to-end data science and business analytics pipel
 
 ## 🧩 6. Business Questions & Key Insights
 
-**Q1. How do customer attributes relate to churn?** Month-to-month customers churn at ~43% vs. ~3% for two-year contracts; fiber optic ~42% vs. DSL ~19%; electronic check ~45% vs. ~15–17% for automatic payment. Churners average 18.0 months of tenure vs. 37.6 for retained customers and pay USD 74.44/month vs. 61.27. `gender` shows no separation.
+**Q1. How do customer attributes relate to churn?** Month-to-month customers churn at ~43% vs. ~3% for two-year contracts; fiber optic ~42% vs. DSL ~19%; electronic check ~45% vs. ~15–17% for automatic payment. Churners average 18.0 months of tenure vs. 37.6 for retained customers and pay \\$74.44/month vs. 61.27. `gender` shows no separation.
 
 <p align="center"><img src="images/churn_rate_by_category.png" alt="Churn rate by customer attribute" width="800"></p>
 
@@ -75,9 +75,9 @@ This repository contains an end-to-end data science and business analytics pipel
 | Medium (0.25–0.50) | 471 | USD 68.86 | 35.5% |
 | Low (< 0.25) | 1,178 | USD 55.89 | 7.3% |
 
-Critical + High cover 464 customers (22.0% of the test base) and 56.6% of expected monthly revenue at risk (USD 23,220.95 of USD 41,016.44), and reach 54.9% of all test-set churners.
+Critical + High risk tranche cover 464 customers (22.0% of the test base) and 56.6% of expected monthly revenue at risk (USD 23,220.95 of USD 41,016.44), and reach 54.9% of all test-set churners.
 
-**Q5. What is the financial impact?** With 464 targeted customers and a 20% save rate (62 churners saved), gross revenue protected over 12 months is USD 59,186.41. ROI depends strongly on offer cost:
+**Q5. What is the financial impact?** With 464 targeted customers and a 20% save rate or successful intervention rate (62 churners saved), gross revenue protected over 12 months is \\$59,186.41. ROI depends strongly on offer cost:
 
 | Offer (USD/month) | Campaign cost | Net benefit | ROI |
 | :---: | :---: | :---: | :---: |
@@ -87,14 +87,13 @@ Critical + High cover 464 customers (22.0% of the test base) and 56.6% of expect
 | 10 | USD 55,680 | USD 3,506 | 6.3% |
 | 15 | USD 83,520 | USD −24,334 | −29.1% |
 
-Break-even sits at roughly USD 10.63/month at a 20% save rate. The break-even save rate rises with offer size, from about 4% at USD 2 to about 28% at USD 15. At USD 7, ROI ranges from +12.7% (15% save rate) to +277.2% (50%). These are upper-bound scenarios (see Section 10).
+Break-even sits at roughly \\$10.63/month at a 20% save rate. The break-even save rate rises with offer size, from about 4% at \\$2 to about 28% at \\$15. At |\\$7, ROI ranges from +12.7% (15% save rate) to +277.2% (50%). These are upper-bound scenarios (see limitations Section).
 
 <p align="center"><img src="images/roi_vs_offer_cost.png" alt="Retention campaign ROI vs. monthly offer cost" width="700"></p>
 
-**Q6. [UPDATE]** Do the `tenure × Contract_Two year` and `tenure × InternetService_Fiber optic` interactions improve Logistic Regression? Flagged as plausible in Notebook 1; result to be added.
 
 ## ⚙️ 7. Requirements
-- Python [UPDATE: version]
+- Python 3.11
 - pandas, numpy, matplotlib, seaborn, scipy, scikit-learn, xgboost, shap, statsmodels, prettytable [UPDATE: version numbers]
 - Jupyter Notebook
 
